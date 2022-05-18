@@ -73,15 +73,17 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(postNewCategory => {
-      res.json(postNewCategory)
+    .then(editCategory => {
+      res.json(editCategory)
       .status(200);
     })
     .catch(err => {
-      console.error(`Unexpected error encountered in post new category route ${err}`);
+      console.error(`Unexpected error encountered new edit category route ${err}`);
       res.status(500).json(err);
     });
 });
+
+
 
 router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
