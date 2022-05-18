@@ -20,9 +20,13 @@ router.get('/', (req, res) => {
       }
     ]
   }) 
-  .then(allProduct => res.json(allProduct))
+  .then(allProduct => {
+    res.json(allProduct);
+    res.status(200);
+  })
   .catch(err => {
     console.error(`Unexpected error encountered in get all product route ${err}`);
+    res.status(500);
   })
 });
 
@@ -33,6 +37,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
+    // be sure to include its associated Category and Tag data
     include: 
     [
       {
@@ -45,8 +50,14 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-  // be sure to include its associated Category and Tag data
-  
+  .then(getProductById => {
+    res.json(getProductById)
+    .status(200);
+  })
+  .catch(err => {
+    console.error(`Unexpected error encountered in get product by id route ${err}`)
+    .status(500);
+  })
 });
 
 // create new product

@@ -15,10 +15,13 @@ router.get('/', (req, res) => {
       }
     ]
   })
-  .then(getAllCategories => res.json(getAllCategories))
+  .then(getAllCategories => {
+    res.json(getAllCategories)
+    .status(200);
+  })
   .catch(err => {
-    console.error(`Unexpected error encountered in get all categories route ${err}`);
-    res.status(500).json(err);
+    console.error(`Unexpected error encountered in get all categories route ${err}`)
+    res.status(500);
   });
   
 });
@@ -30,7 +33,8 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
      // be sure to include its associated Products
-      include: [
+      include: 
+      [
         {
           model:  Product,
           attributes: ['id', 'product_name', 'price', 'stock', 'category_id'],
@@ -38,11 +42,12 @@ router.get('/:id', (req, res) => {
       ]
   })
     .then(getCategoryById => {
-      res.json(getCategoryById);
+      res.json(getCategoryById)
+      .status(200);
     })
     .catch(err => {
       console.error(`Unexpected error encountered in get category by id route ${err}`);
-      res.status(500).json(err)
+      res.status(500)
     });
 });
 
@@ -51,10 +56,13 @@ router.post('/', (req, res) => {
   Category.create({
     category_name: req.body.category_name
   })
-    .then(postNewCategory => res.json(postNewCategory))
+    .then(postNewCategory => {
+      res.json(postNewCategory)
+      .status(200);
+    })
     .catch(err => {
-      console.err(`Unexpected error encountered in post new category route ${err}`);
-      res.status(500).json(err);
+      console.err(`Unexpected error encountered in post new category route ${err}`)
+      .status(500);
     });
 });
 
@@ -65,7 +73,10 @@ router.put('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(postNewCategory => res.json(postNewCategory))
+    .then(postNewCategory => {
+      res.json(postNewCategory)
+      .status(200);
+    })
     .catch(err => {
       console.error(`Unexpected error encountered in post new category route ${err}`);
       res.status(500).json(err);
@@ -79,11 +90,14 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(deleteCategory => res.json(deleteCategory))
+    .then(deleteCategory => {
+      res.json(deleteCategory)
+    .status(200);
+  })
     .catch(err => {
       console.error(`Unexpected error encountered in delete category route ${err}`);
-      res.status(500).json(err);
-    })
+      res.status(500);
+  })
 });
 
 module.exports = router;
