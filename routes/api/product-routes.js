@@ -142,12 +142,19 @@ router.delete('/:id', (req, res) => {
     }
   })
   .then(deleteProduct => {
-    res.json(deleteProduct)
-    .status(200)
+    if(deleteProduct === 1){
+    res.json({message: `Product with ID: ${req.params.id} has successfully been deleted`})
+    .status(200);
+    } else {
+    res.json({message: `Product with ID: ${req.params.id} not found`})
+    .status(404);
+    }
+
   })
   .catch(err => {
-    console.err(`Unexpected error encountered in delete product by id ${err}`)
-    res.status(500);
+    console.error(`Unexpected error encountered in delete product by id ${err}`)
+    res.json({message: `Error encountered: ${err}`})
+    .status(500);
   })
 });
 

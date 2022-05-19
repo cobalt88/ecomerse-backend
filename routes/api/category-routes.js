@@ -74,6 +74,7 @@ router.put('/:id', (req, res) => {
     }
   })
     .then(editCategory => {
+      //add more detailed response information here later -V.T. 5-19-22
       res.json(editCategory)
       .status(200);
     })
