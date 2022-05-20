@@ -33,6 +33,8 @@ there are dev dependencies that do not auto-install but they are listed in the p
 
 there is a video in the misc folder showing the insomnia tests, how they routes work, what types of responses to expect, what requests can be sent, ect. 
 
+[insomnia route test video](misc%5Cinsomnia-tests.mp4)
+
  ## Contribution Guidelines
  If you would like to contribute to the project, feel free to do so. Some things to keep in mind:
 
