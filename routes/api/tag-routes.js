@@ -91,9 +91,15 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-    .then(deletetag => {
-      res.json(deletetag)
-    .status(200);
+    .then(deleteTag => {
+      if(deleteTag === 1){
+        res.json({message: `Tag with ID: ${req.params.id} has successfully been deleted`})
+        .status(200);
+        } else {
+        res.json({message: `Tag with ID: ${req.params.id} not found`})
+        .status(404);
+        }
+    
   })
     .catch(err => {
       console.error(`Unexpected error encountered in delete tag route ${err}`);

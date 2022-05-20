@@ -94,8 +94,14 @@ router.delete('/:id', (req, res) => {
     }
   })
     .then(deleteCategory => {
-      res.json(deleteCategory)
-    .status(200);
+      if(deleteCategory === 1){
+        res.json({message: `Category with ID: ${req.params.id} has successfully been deleted`})
+        .status(200);
+        } else {
+        res.json({message: `Category with ID: ${req.params.id} not found`})
+        .status(404);
+        }
+    
   })
     .catch(err => {
       console.error(`Unexpected error encountered in delete category route ${err}`);
