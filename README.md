@@ -17,17 +17,21 @@
 
  ## Overall Description 
 
-The overall idea of this project it to play around with sequelize to interface with the MySQL database instead of sending SQL Queries directly with express routes. The overall structure of the project follows MVC standards to allow easy integration with other projects or to allow this to be built upon as needed. There is a JSON file in the routes folder with pre-configured GET, POST, PUT, and DELETE requests for insomnia.
+The overall idea of this project it to play around with sequelize to interface with the MySQL database instead of sending SQL Queries directly with express routes. The overall structure of the project follows MVC standards to allow easy integration with other projects or to allow this to be built upon as needed. There is a JSON file in the misc folder with pre-configured GET, POST, PUT, and DELETE requests for testing with insomnia.
 
  ## Installation Instructions
 
 npm install, 
 
-there are dev dependencies that do not auto-install with the above command, mainly nodemon, thats just a personal preference though. 
+set up the SQL database and seed the tables,
+
+run server.js
+
+there are dev dependencies that do not auto-install but they are listed in the package.json if you would like to use them.
 
  ## Instructions/How To Use
 
-instructions coming soon.
+there is a video in the misc folder showing the insomnia tests, how they routes work, what types of responses to expect, what requests can be sent, ect. 
 
  ## Contribution Guidelines
  If you would like to contribute to the project, feel free to do so. Some things to keep in mind:
@@ -45,7 +49,7 @@ instructions coming soon.
 
  ## Application Tests
 
-
+Presently there are no active tests with something like JEST, however, there is an insomnia JSON document located in the routes folder that has preconfigured requests that will test the functionality of all the routes currently written. 
 
 ## license
   This project is licensed under the MIT license.
