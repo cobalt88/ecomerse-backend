@@ -53,7 +53,7 @@ there is a video in the misc folder showing the insomnia tests, how they routes 
 
  ## Application Tests
 
-Presently there are no active tests with something like JEST, however, there is an insomnia JSON document located in the routes folder that has preconfigured requests that will test the functionality of all the routes currently written. 
+Presently there are no active tests with something like JEST, however, there is an insomnia JSON document located in the misc folder that has preconfigured requests that will test the functionality of all the routes currently written. 
 
 ## license
   This project is licensed under the MIT license.
