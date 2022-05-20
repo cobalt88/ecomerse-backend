@@ -31,9 +31,11 @@ there are dev dependencies that do not auto-install but they are listed in the p
 
  ## Instructions/How To Use
 
-there is a video in the misc folder showing the insomnia tests, how they routes work, what types of responses to expect, what requests can be sent, ect. 
+there is a video in the misc folder showing the insomnia tests, how they routes work, what types of responses to expect, what requests can be sent, ect as well as another one that shows how to setup the SQL database. 
 
 [insomnia route test video](misc%5Cinsomnia-tests.mp4)
+
+[server setup](misc%5Cserver-setup.mp4)
 
  ## Contribution Guidelines
  If you would like to contribute to the project, feel free to do so. Some things to keep in mind:
